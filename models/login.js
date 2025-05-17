@@ -1,8 +1,8 @@
-const mongoose = require("mongoose")
+// const mongoose = require("mongoose")
 
-const loginSchema =  mongoose.Schema({
-  email: String,
-  password: String,
-})
+// const loginSchema =  mongoose.Schema({
+//   email: String,
+//   password: String,
+// })
 
-module.exports = mongoose.model("login",loginSchema)
+// module.exports = mongoose.model("login",loginSchema)
