@@ -1,0 +1,126 @@
+body{
+    background-image: url(https://img.freepik.com/free-photo/arrangement-desk-elements-with-copy-space_23-2148513312.jpg?t=st=1736355627~exp=1736359227~hmac=0f1028eaf71773babf69234de9abcec8f3a03d7bee8c6ed717351c5c116b3c43&w=1380);
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    /* width: 100vw; */
+    
+}
+
+#container{
+    height: 58.5vmax;
+    background-color: #58a3cb;
+    width: 35vmax;
+    border-radius: 30px;
+    filter: drop-shadow(3px 5px 10px teal);
+}
+@media only screen and (max-width:1000px){
+    #container{
+        height: 155vmax;
+        width: 97vw;
+        margin-right: 20px;
+    } 
+}
+    
+#header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right,#007991,#78ffd6);
+    height: 2px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 20px 10px;
+}
+#header h2{
+    color: #222;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    
+}
+#form{
+    padding: 40px;
+}
+.form-control{
+    margin-bottom: 10px;
+    position: relative;
+    padding: 0 10px;
+}
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.form-control input{
+    width: 100%;
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+    display: block;
+    font-size: 14px;
+    padding: 12px 0;
+}
+.form-control input:focus{
+    outline: 0;
+    border-color: #1b2fc9;
+}
+.form-control.success input{
+    border-color: #2ecc71;
+}
+.form-control.error input{
+    border-color: #e74c3c;
+}
+.form-control i{
+    position: absolute;
+    right: 5%;
+    top: 38px;
+    visibility: hidden;
+}
+.form-control.error small{
+    visibility: visible;
+
+}
+.form-control small{
+    color: #e74c3c;
+    position: absolute;
+   
+    visibility:hidden;
+}
+.form-control.success i.fa-circle-check{
+    color: #2ecc71;
+    visibility: visible;
+}
+.form-control.error i.fa-circle-xmark{
+    color: #e74c3c;
+    visibility: visible;
+}
+textarea{
+    width: 20vmax;
+}
+
+#btn{
+    background: linear-gradient(to right,#007991,#78ffd6);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    padding: 15px 0;
+    margin: 20px 20px 0px 20px;
+    width:90%;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 1s ease;
+}
+#btn:hover{
+    background: linear-gradient(to left,#007991,#78ffd6);
+}
+.form-control2{
+    padding: 0 10px;
+}
+
+
+
+

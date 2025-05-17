@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>User Dashboard</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f0f2f5;
+        display: flex;
+        height: 100vh;
+      }
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #img-div {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      #img-div img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+
+      #img-div h4 {
+        color: white;
+        margin-top: 10px;
+      }
+
+      .sidebar ul {
+        width: 100%;
+        padding-left: 0;
+      }
+
+      .sidebar li {
+        text-align: center;
+        width: 100%;
+      }
+
+      .sidebar {
+        width: 250px;
+        background-color: #2c3e50;
+        color: white;
+        padding: 20px;
+      }
+
+      .sidebar h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+      }
+
+      .sidebar li {
+        padding: 15px 10px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .sidebar li:hover,
+      .sidebar li.active {
+        background-color: #34495e;
+      }
+
+      .main {
+        flex: 1;
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section {
+        display: none;
+        animation: fade 0.5s ease forwards;
+        position: absolute;
+        width: 100%;
+        top: 10;
+        left: 0;
+      }
+      i {
+        position: absolute;
+        z-index: 1000;
+        top: 10px;
+        font-size: 36px;
+      }
+
+      .section.active {
+        display: block;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .card h3 {
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      .card p {
+        margin: 8px 0;
+      }
+      #img-div img {
+        border-radius: 20px;
+      }
+      ul li a {
+        color: aliceblue;
+        text-decoration: none;
+      }
+      @media only screen and (max-width: 1000px) {
+        .sidebar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>User Dashboard</h2>
+      <div id="img-div">
+        <img src="/uploads/<%= user.Image %>" alt="user image" />
+
+        <h4><%= user.username %></h4>
+      </div>
+      <ul id="nav">
+        <li class="active" data-section="profile">User Profile</li>
+        <li data-section="books">Books Purchase</li>
+        <li data-section="preferences">Preferences</li>
+        <li data-section="favourites">Favourites</li>
+        <li><a href="/readBooks">Books</a></li>
+        <li><a href="/user/update">update</a></li>
+        <li data-section="logout"><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+    <!-- <i class="fa-solid fa-bars"></i> -->
+    <div class="main">
+      <div>
+        <button id="bars"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <div id="profile" class="section active">
+        <div class="card">
+          <h3>User Profile</h3>
+          <p><strong>Name:</strong> <%= user.fname %></p>
+          <p><strong>Age:</strong> <%= user.age%></p>
+          <p><strong>Email:</strong> <%= user.email %></p>
+          <p><strong>Phone:</strong> <%= user.phone %></p>
+          <p><strong>Address:</strong> <%= user.Address %></p>
+          <p><strong>Gender:</strong> <%= user.gender %></p>
+        </div>
+      </div>
+
+      <div id="books" class="section">
+        <div class="card">
+          <h3>Books Purchase</h3>
+          <p>✔️ JavaScript: The Good Parts</p>
+          <p>✔️ Eloquent JavaScript</p>
+          <p>✔️ Clean Code</p>
+        </div>
+      </div>
+
+      <div id="preferences" class="section">
+        <div class="card">
+          <h3>Preferences</h3>
+          <p><strong>Preferred Language:</strong><%= user.language %></p>
+          <p><strong>Reading Mode:</strong> Dark</p>
+          <p><strong>Notifications:</strong> Enabled</p>
+          <p><strong>genere:</strong> <%= user.genre %></p>
+        </div>
+      </div>
+
+      <div id="favourites" class="section">
+        <div class="card">
+          <h3>Favourites</h3>
+          <p>📘 Atomic Habits</p>
+          <p>📘 Deep Work</p>
+          <p>📘 Thinking, Fast and Slow</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const navItems = document.querySelectorAll("#nav li");
+      const sections = document.querySelectorAll(".section");
+
+      navItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          // Remove active from all nav items
+          navItems.forEach((i) => i.classList.remove("active"));
+          item.classList.add("active");
+
+          // Hide all sections
+          sections.forEach((section) => section.classList.remove("active"));
+
+          // Show the selected section
+          const target = item.getAttribute("data-section");
+          document.getElementById(target).classList.add("active");
+        });
+      });
+      let hide = 0;
+      const bars = document.getElementById("bars");
+      const sidebar = document.querySelector(".sidebar");
+      bars.addEventListener("click", () => {
+        if (hide == 0) {
+          sidebar.style.display = "flex";
+          bars.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+          hide = 1;
+        } else {
+          sidebar.style.display = "none";
+          bars.innerHTML = '<i class="fa-solid fa-bars"></i>';
+          hide = 0;
+        }
+      });
+    </script>
+  </body>
+</html>

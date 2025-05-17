@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    
+        <div id="container">
+            <div id="header">
+                <h2>Registration Page</h2>
+            </div>
+            <form action="/register" method="post" id="form1" enctype="multipart/form-data" >
+                <div class="form-control " >
+                    <label for="fname">First Name:</label> <br>
+                    <input type="text" name="fname" id="fname">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="lname">Last Name:</label><br>
+                    <input type="text" name="lname" id="lname">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="username">Username:</label><br>
+                    <input type="text" name="username" id="username">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="Number">Phone Number:</label><br>
+                    <input type="number" name="pnumber" id="Number">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="email">E-Mail:</label><br>
+                    <input type="text" name="email" id="email">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="age">Age::</label><br>
+                    <input type="number" name="age" id="age">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="pass">Password:</label><br>
+                    <input type="password" name="password" id="pass">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="Address">Address:</label> <br>
+                    <textarea name="Address" id="Address"></textarea>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="upldimg">Upload Image:</label> <br>
+                    <input type="file" name="upldimg" >
+                </div>
+                <div class="form-control2" id="Preferred">
+                    <label for="language">Preferred Language:</label> <br>
+                     <input type="checkbox" name="language[]" value="English" id="english"> <label for="english">English</label>
+                     <input type="checkbox" name="language[]" value="Hindi" id="Hindi"> <label for="">Hindi</label>
+                    <input type="checkbox" name="language[]"  value="Spanish" id="Spanish"> <label for="">Spanish</label> 
+                    <input type="checkbox" name="language[]"  value="French" id="French"> <label for="">French</label>
+                    <input type="checkbox" name="language[]"  value="Russian" id="Russian"> <label for="Russian">Russian</label>
+                    <input type="checkbox" name="language[]"  value="Arabic" id="Arabic"> <label for="Arabic">Arabic</label>
+                </div>
+                <div class="form-control2">
+                    <label for="gender">Select Gender:</label> <br>
+                    <select value="" id="" name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-control2" id="Preferred">
+                    <label for="genere">Preferred genre:</label> <br>
+                     <input type="checkbox" name="genere[]" value="Romance" id="Romance"> <label for="">Romance</label>
+                     <input type="checkbox" name="genere[]" value="Horror" id="horror"> <label for="">Horror</label>
+                     <input type="checkbox" name="genere[]" value="Comedy" id="comedy"> <label for="">Comedy</label> 
+                     <input type="checkbox" name="genere[]" value="Fantasy" id="Fantasy"> <label for="">Fantasy</label>
+                     <input type="checkbox" name="genere[]" value="War" id="War"> <label for="">War</label>
+                     <input type="checkbox" name="genere[]" value="Crime" id="Crime"> <label for="">Crime</label> <br>
+                     <input type="checkbox" name="genere[]" value="Fiction" id="Fiction"> <label for="">Fiction</label>
+                     <input type="checkbox" name="genere[]" value="Fiction" id="Thriller"> <label for="">Thriller</label>
+                     <input type="checkbox" name="genere[]" value="Drama" id="Drama"> <label for="">Drama</label> 
+                     <input type="checkbox" name="genere[]" value="Adult" id="Adult"> <label for="">Adult</label>
+                     <input type="checkbox" name="genere[]" value="Comics" id="Comics"> <label for="">Comics</label>
+                     <input type="checkbox" name="genere[]" value="Adventure" id="Adventure"> <label for="">Adventure</label> 
+                     <input type="checkbox" name="genere[]" value=Sci-Fi"" id="Sci-Fi"> <label for="">Sci-Fi</label>
+                     <input type="checkbox" name="genere[]" value="Animated" id="Animated"> <label for="">Animated</label>
+                     <input type="checkbox" name="genere[]" value="Poetry" id="Poetry"> <label for="">Poetry</label> 
+                     <input type="checkbox" name="genere[]" value="Musical" id="Musical"> <label for="">Musical</label>
+                     <input type="checkbox" name="genere[]" value="Mystery" id="Mystery"> <label for="">Mystery</label>
+                     
+                </div>
+                <input type="submit" value="Next" id="btn" name="">
+            </form>
+            </div>
+</body>
+<script src="/javascripts/register.js"></script>
+
+</html>

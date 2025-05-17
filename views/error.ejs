@@ -1,0 +1,104 @@
+<!-- <h1><%= message %></h1>
+<h2><%= error.status %></h2>
+<pre><%= error.stack %></pre> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error - Page Not Found</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+    
+    .error-container {
+      text-align: center;
+      animation: slideIn 1s ease forwards;
+    }
+
+    .error-code {
+      font-size: 10rem;
+      font-weight: bold;
+      animation: bounce 2s infinite;
+    }
+    
+    .error-message {
+      font-size: 2rem;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s forwards 1s;
+    }
+
+    .home-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: white;
+      color: #764ba2;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+      opacity: 0;
+      animation: fadeIn 2s forwards 2s;
+    }
+
+    .home-button:hover {
+      background: #764ba2;
+      color: white;
+      cursor: pointer;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <div class="error-message">Oops! something went wrong</div>
+    <a href="/" class="home-button">Go Home</a>
+  </div>
+</body>
+</html>
+

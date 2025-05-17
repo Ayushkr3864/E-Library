@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<body class="body">
+    <span id="login">
+        <div><h1 id="head1">Admin Login Page</h1></div>
+        <div class="container">
+            <form action="/admin/login" method="post">
+               
+                <input type="text" id="name" name="email" value="" placeholder="Enter email"><br> <br>
+                <input id="pass" type="password" placeholder="Password" name="password"> 
+                <input type="text" name="sec_key" id="key" placeholder="Secret key">
+
+                <div ><input id="button" type="submit" value="login"></div> 
+            </form>
+            <div id="password"><a id="password" href="#">Forget Password</a></div>
+            <p id="Register">Don't Have an Account? <a  class="Register" href="/register/admin">Register Here</a></p>
+        </div>
+    </span>
+    <!-- <script src="/public/javascripts/script.js"></script> -->
+  
+</body>
+
+</html>

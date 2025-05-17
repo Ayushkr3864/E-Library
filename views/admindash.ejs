@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard - Books</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        /* Reset and basic setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  min-height: 100vh;
+  color: #333;
+  animation: backgroundAnimation 15s infinite alternate;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  animation: slideInDown 1s ease forwards;
+}
+
+/* Main Dashboard */
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Sections */
+.form-section, .list-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  width: 320px;
+  animation: fadeIn 2s ease;
+}
+
+/* Form Styling */
+form input, form textarea, form button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #667eea;
+  outline: none;
+}
+
+form button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+/* Book List */
+ul {
+  list-style: none;
+}
+
+.book-item {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-left: 5px solid #667eea;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  position: relative;
+  animation: fadeInBook 0.8s ease forwards;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #e63946;
+}
+
+/* Animations */
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  }
+  100% {
+    background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+  }
+}
+
+@keyframes fadeInBook {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section-specific animations */
+.animate-slide-in {
+  animation: slideInDown 1.5s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 2s ease forwards;
+}
+
+    </style>
+
+  <header class="navbar">
+    <h1>📚 Admin Dashboard</h1>
+  </header>
+
+  <main class="dashboard">
+    
+    <section class="form-section animate-slide-in">
+      <h2>Add New Book</h2>
+      <form id="bookForm" action="/createBooks" method="post">
+        <input type="text" placeholder="books name" id="title" name="books">
+        <input type="text" placeholder="author" name="author" id="author">
+        <textarea id="description" placeholder="Book Description" name="des" required></textarea>
+        <input type="text" placeholder="books image" name="img">
+        <input type="text" placeholder="books link" name="link">
+        <button type="submit">Add Book</button>
+      </form>
+    </section>
+
+    <section class="list-section animate-fade-in">
+      <h2>Books List</h2>
+      <ul id="bookList">
+        
+        <table>
+            <tr>
+              <a href="/delete"><h1>Delete Books</h1></a>
+              <a href="/user"><h1>Edit user</h1></a>
+            </tr>
+        </table>
+      </ul>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

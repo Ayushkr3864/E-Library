@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <style>
+        #container{
+            margin-top: 50px;
+            height: 30vmax;
+        }
+        @media only screen and (max-width:1000px){
+            #container{
+                height: 50vmax;
+            }
+        }
+    </style>
+    
+        <div id="container">
+            <div id="header">
+                <h2>Registration Page</h2>
+            </div>
+            <form action="/user/update" method="post" >
+                <div class="form-control">
+                    <label for="email">E-Mail:</label><br>
+                    <input type="text" name="email_id" id="email">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                    <label for="pass">Password:</label><br>
+                    <input type="password" name="pass" id="pass">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <small>Error Message</small>
+                </div>
+                
+                <input type="submit" id="btn" name="">
+                </div>
+                
+            </form>
+        </div>
+</body>
+<script src="/javascripts/register.js"></script>
+
+</html>

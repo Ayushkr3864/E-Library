@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/readBooks.css">
+    <title>Document</title>
+</head>
+<style>
+    .card{
+    background-color: #b292d4;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    filter: drop-shadow(5px 5px 20px teal);
+    margin: 10px;
+    }
+    .card1 {
+     width: 10vw;
+     height: 40vh;
+    }
+    img{
+        border-radius: 10px;
+    }
+     #books{
+    background-color:blueviolet;
+    border-radius: 20px;
+    display: flex;
+   
+    justify-content: center;
+    align-items: center;
+    }
+    #container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px;
+    margin: 20px 0   ;
+    }
+    .content{
+        background-color: antiquewhite;
+        height: 20px;
+        border-radius: 10px;
+        box-shadow: 5px 5px teal;
+        padding-left: 20px;
+    }
+    @media only screen and (max-width:1000px){
+        .card1 {
+     width: 38vw;
+     height: 33vh;
+    }
+    }
+</style>
+<body>
+    <div id="books"><h1>Books</h1></div>
+    <div id="container">
+        <% books.forEach(function(book){ %>
+            <div class="card card1">
+                <img src="<%= book.Image %>" height="150px" width="150px" class="card-img">
+                <div class="content"><p class="card-title">title: <%= book.book %></a></p></div>
+                <div class="content"><p class="card-info">Autor:<%= book.author %></p></div>
+                <div class="content"><p>Read: <a href="<%= book.link %>">link</a></p></div>
+            </div>
+        <% }) %>
+        
+       
+    </div>
+</body>
+</html>

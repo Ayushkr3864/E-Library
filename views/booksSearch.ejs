@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Books</title>
+    <link rel="stylesheet" href="/stylesheets/booksSearch.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <marquee behavior="scroll" direction="right"
+          ><h1 class="logo">Search Books</h1></marquee
+        >
+      </div>
+    </header>
+    <section class="hero">
+      <div class="container">
+        <h2>Find information of best books</h2>
+        <input
+          type="text"
+          placeholder="Search for books..."
+          name="query"
+          id="search"
+        />
+        <button id="btn">Search</button>
+      </div>
+    </section>
+    <section><div id="result"></div></section>
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 SaveOnStyle. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="/javascripts/booksSearch.js"></script>
+  </body>
+</html>
