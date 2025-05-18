@@ -14,7 +14,7 @@ const { isAdmin } = require("../middleware/adminAuth");
 // const {adminAuth} = require("../middleware/isLoggedin")
 const adminModel = require("../models/admin");
 const { token } = require("morgan");
-const admloginSchema = require("../models/adminLogin");
+// const admloginSchema = require("../models/adminLogin");
 const jwtSecret = process.env.SECRET_KEY;
 const cloudinary = require("cloudinary");
 console.log(process.env.NODE_ENV);
