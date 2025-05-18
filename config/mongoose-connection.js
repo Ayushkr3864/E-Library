@@ -4,10 +4,11 @@ const dbgr = require("debug")("development:mongoose")
 
 mongoose.connect(`${config.get("MONGODB_URI")}/database`)
 .then(function(){
-    dbgr("connected")
+    console.log("connected");
 })
 .catch(function(err){
-    dgbr(err)
+    console.log(err);
+    
 })
 
 module.exports = mongoose.connection;
