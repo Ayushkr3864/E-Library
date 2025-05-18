@@ -20,6 +20,8 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+server.keepAliveTimeout = 120000;     // 120 seconds
+server.headersTimeout = 130000;
 
 /**
  * Listen on provided port, on all network interfaces.
