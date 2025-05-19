@@ -236,9 +236,9 @@ router.post("/admin/login", async function (req, res) {
     }
     if (admin.secret === req.body.sec_key) {
       bcrypt.compare(req.body.password, admin.password, function (err, result) {
-        if (err) {
-          res.render("error");
-        }
+        // if (err) {
+        //   res.render("error");
+        // }
         if (result == true) {
           const adminToken = jwt.sign({ email: req.body.email }, jwtSecret);
           res.cookie("token", adminToken);
