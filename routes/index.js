@@ -7,7 +7,7 @@ var bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 const multer = require("multer");
 const bookModel = require("../models/book");
-require("dotenv").config();
+// require("dotenv").config();
 const { IsLoggedIn } = require("../middleware/isLoggedin");
 const { isAdmin } = require("../middleware/adminAuth");
 // const {isAdmin} = require("../middleware/adminAuth")
