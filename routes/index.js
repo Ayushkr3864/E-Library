@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const userModel = require("../models/users");
 // const loginModel = require("../models/login");
-var db = require("../config/mongoose-connection");
+// var db = require("../config/mongoose-connection");
 var bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 const multer = require("multer");
@@ -14,9 +14,7 @@ const { isAdmin } = require("../middleware/adminAuth");
 // const {adminAuth} = require("../middleware/isLoggedin")
 const adminModel = require("../models/admin");
 const { token } = require("morgan");
-// const admloginSchema = require("../models/adminLogin");
 const jwtSecret = process.env.SECRET_KEY;
-const cloudinary = require("cloudinary");
 console.log(process.env.NODE_ENV);
 
 // import {Admin_email} from "../config/admin-only";
