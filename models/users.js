@@ -3,6 +3,8 @@ const dotenv= require('dotenv');
 dotenv.config();
 const db= process.env.MONGO_URL;
 mongoose.connect(db);
+console.log(db);
+
 const userSchema = mongoose.Schema({
   fname:{
     type:String,
