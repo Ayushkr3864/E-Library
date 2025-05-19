@@ -6,7 +6,7 @@ function isAdmin(req, res, next) {
       return res.render("admin/login"); // ✅ Added return and corrected path
     }
 
-    const admin = jwt.verify(req.cookies.token, jwtSecret);
+    const admin = jwt.verify(req.cookies.token, jwtToken);
     req.admin = admin; // ✅ Fixed typo
 
     console.log(admin);
