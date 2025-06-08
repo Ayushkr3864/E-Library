@@ -229,7 +229,7 @@ router.get("/admin/login", function (req, res) {
 // Admin login
 router.post("/admin/login", async function (req, res) {
   try {
-    const admin = await adminModel.find();
+    const admin = await adminModel.findOne({email:req.body.email});
     console.log(admin);
     if (!admin) {
       return res.send("error");
