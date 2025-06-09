@@ -8,7 +8,8 @@ const mongoose = require("mongoose")
         type:Number,
     },
     email:{
-        type:String
+        type: String,
+        trim:true
     },
     password:{
         type:String

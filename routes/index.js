@@ -228,13 +228,19 @@ router.get("/admin/login", function (req, res) {
 
 // Admin login
 router.post("/admin/login", async function (req, res) {
+  const email = req.body.email.trim();
   try {
-    const admin = await adminModel.findOne({email:req.body.email});
+    const email = await adminModel.find();
+    console.log(email);
+    
+    const admin = await adminModel.findOne({email});
     console.log(admin);
+    console.log(req.body);
+    
     if (!admin) {
       return res.send("error");
     }
-    if (admin.secret === req.body.sec_key) {
+    else if (admin.secret === req.body.sec_key) {
       bcrypt.compare(req.body.password, admin.password, function (err, result) {
         // if (err) {
         //   res.render("error");
