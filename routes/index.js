@@ -228,7 +228,7 @@ router.get("/admin/login", function (req, res) {
 
 // Admin login
 router.post("/admin/login", async function (req, res) {
-  const email = req.body.email.trim();
+  const email = req.body.email.trim().toLowerCase();
   try {
     const admin = await adminModel.findOne({email});
     console.log(admin);
