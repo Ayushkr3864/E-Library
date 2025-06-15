@@ -118,7 +118,7 @@ router.get("/user", isAdmin, async function (req, res) {
 router.get("/delete/:id", isAdmin, async function (req, res) {
   const user = req.params.id;
   await userModel.findOneAndDelete(user);
-  res.redirect("/read");
+  res.redirect("/user");
 });
 // logout route
 router.get("/logout", function (req, res) {
